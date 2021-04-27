@@ -1,0 +1,232 @@
+.table {
+  min-width: 728px;
+  width: 100%;
+
+  border-collapse: collapse;
+
+  &__head {
+    font-size: 12px;
+    line-height: 16px;
+    
+    color: $color-secondary-text;
+  }
+  
+  &__header {
+    position: relative;   
+    padding-bottom: 8px;
+    padding-right: 15px;
+
+    text-align: left;
+    vertical-align: bottom;  
+    font-weight: 400;
+    
+
+    -webkit-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    &:nth-child(-n + 4) {
+      cursor: pointer;
+    }
+    
+    &:first-child {
+      width: 125px;
+      padding-left: 20px;
+    }
+
+    &:nth-child(2) { 
+      min-width: 170px;
+      width: 22%;            
+    }
+
+    &:nth-child(3),
+    &:nth-child(4) {
+      width: 15%;
+    }
+
+    
+    &[data-header]::after {
+      content: '';
+      position: absolute;
+      top: 19px;     
+
+      background-image: url(../img/arrow_down.svg);
+      width: 12px;
+      height: 12px;
+      object-fit: contain;
+    }
+
+    &[data-header="fullname"]::before {
+      content: "А-Я";
+      position: absolute;
+      top: 17px;
+      left: 152px;
+
+      font-size: 10px;
+      color: $color-firm;
+    }
+
+    &_active {
+      color: $color-firm;
+    }
+
+    &_active_reverse {
+      &::after {          
+        transform: rotate(180deg);          
+      }
+    }
+  }
+
+  &__data {
+    background-color: $color-white;
+  }
+
+  &__item {
+    height: 60px;    
+    padding-right: 15px;
+    border-bottom: 1px solid $color-border;
+
+    &:first-child {
+      padding-left: 20px;
+  
+      font-size: 12px;    
+      color: $color-secondary-text;
+    }
+
+    &:nth-child(2) { 
+      width: 20%;    
+      padding-top: 5px;
+      padding-bottom: 5px;
+      line-height: 19px;        
+    }
+
+    &:nth-child(3),
+    &:nth-child(4) {
+      width: 14%;
+    }
+
+    &:nth-child(5) {
+      width: 135px;
+      min-width: 135px;
+    }
+  }
+
+  &__btn {
+    position: relative;
+    padding: 5px 5px 5px 20px ;
+
+    &:not(:last-child) {
+      margin-right: 10%;
+    }
+
+    &:focus {
+      outline: 2px dotted $color-firm;
+    }
+
+    &:hover,
+    &:active {
+      opacity: 0.75;
+    }
+
+    &::before {
+      content: '';
+      position: absolute;
+      left: 3px;
+
+      width: 16px;
+      height: 16px;
+      object-fit: contain;
+    }
+
+    &_edit {     
+      &::before {
+        background-image: url(../img/edit.svg);
+      }   
+
+      &_loading {
+        color: $color-firm;
+        & .spinner {
+          @include customSpinner(16, 13px, 10px, $color-firm);
+        }
+        &::before {
+          background-image: none;
+        }  
+      } 
+    }
+
+    &_remove {
+      &::before {      
+        background-image: url(../img/cancel.svg);
+      }
+    }
+  }
+
+  &__time {
+    color: $color-secondary-text;
+  }
+
+}
+
+.contacts {  
+  display: flex;
+  flex-wrap: wrap;
+  margin: 0;
+
+  font-size: 12px;
+  font-weight: 700;
+
+  &__item {
+    width: 16px;
+    height: 16px;
+    
+    object-fit: contain;
+
+    font-size: 0;
+
+    opacity: 0.7;
+    background-image: url(../img/contact.svg);
+
+    &:nth-child(-n + 5) {
+      margin-bottom: 7px;
+    }
+
+    &:not(:last-child) {
+      margin-right: 7px;
+    }      
+       
+    &_vk {
+      background-image: url(../img/vk.svg);
+    }
+    &_fb {
+      background-image: url(../img/fb.svg);
+    }
+    &_phone {
+      background-image: url(../img/phone.svg);
+    }
+    &_email {
+      background-image: url(../img/mail.svg);
+    }
+
+    &_more {
+      padding-top: 1.5px;
+      padding-left: 1.5px;
+      border: 1px solid $color-firm;
+      border-radius: 50%;
+
+      font-size: 8px;
+      font-weight: 600;
+
+      background-image: none;
+      cursor: pointer;
+    }
+
+    &:hover {
+      opacity: 1;
+    }
+  }
+
+  &__link {
+    display: block;
+    height: 100%;
+  }
+}

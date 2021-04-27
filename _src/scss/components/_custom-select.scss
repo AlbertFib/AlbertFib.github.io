@@ -1,0 +1,110 @@
+.select {
+  position: relative;
+  min-width: 123px;
+  height: 38px;
+  
+  @media (max-width: 767px) {
+    min-width: 108px;
+
+    &_other {
+      min-width: 87px;
+    }
+  }
+  
+  &__backdrop {
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1;
+
+    display: none;
+
+    background-color: transparent;
+  }
+
+  &__trigger {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    width: 100%;
+    padding: 10px 7px 10px 12px;
+    border: 1px solid $color-border;
+    
+    font-size: 12px;
+    line-height: 1.4;
+    text-align: left;
+
+    background-color: $color-select-bg;
+    cursor: pointer;
+    user-select: none;
+
+    &::after {
+      content: '';
+      width: 12px;
+      height: 12px;
+      object-fit: contain;
+      background-image: url(../img/arrow_back_ios.svg);
+    }
+
+    &:focus {
+      outline: none;
+      border: 1px solid $color-firm;
+    }
+  }
+  &__dropdown {
+    position: absolute;
+    left: 0;
+    right: 0;
+    z-index: 2;
+    overflow-y: hidden;
+
+    display: none;
+    max-height: 166px;
+    border: 1px solid $color-border;
+    border-top: none;
+  }
+
+  &__items {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-size: 12px;
+  }
+
+  &__item {
+    padding: 10px 12px;
+    background-color: $color-option-bg;    
+
+    &_selected {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+
+      background-color: $color-option-active;
+    }
+
+    &:hover {
+      cursor: pointer;
+      background-color: $color-option-hover;
+      transition: 0.2s background-color ease-in-out;
+    }
+
+    &:focus {
+      outline-color: $color-firm;
+    }
+  }
+
+  &_show {
+    & .select__trigger::after {
+      transform: rotate(180deg);
+    }
+
+    & .select__dropdown, 
+    & .select__backdrop {
+      display: block;
+    }
+  }
+}

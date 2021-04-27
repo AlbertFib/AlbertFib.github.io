@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="css/style.css">
+
+  <script src="./js/bundle.js" defer></script>
+
+  <title>CRM</title>
+</head>
+
+<body>
+  <header class="header">
+    <div class="container">
+      <img class="header__logo logo" src="img/logo.svg" alt="Логотип компании skb">
+      <div class="header__search search">
+        <form class="search__form">
+          <input class="search__input" type="text" name="search" placeholder="Введите запрос">
+        </form>
+      </div>
+    </div>
+  </header>
+  <main>
+    <section class="clients">
+      <div class="container">
+        <h1 class="clients__title">Клиенты</h1>         
+        <table class="clients__table table">
+        </table>
+        <div class="data-placeholder is-hidden">
+          <svg class="spinner" viewBox="0 0 50 50">
+            <circle class="path" cx="25" cy="25" r="20" fill="none" stroke-width="5"></circle>
+          </svg>
+        </div> 
+        <button class="clients__btn" type="button">Добавить клиента</button>
+      </div>
+    </section>
+    <section class="modal is-hidden">
+    </section>
+  </main>
+</body> 
+
+</html>

@@ -1,0 +1,136 @@
+.form-contacts {    
+    padding: 25px 0 17px 15px;
+    width: calc(100% + 60px);
+    margin-top: 26px;
+    margin-left: -30px;
+
+    
+    background-color: rgba($color-border, 0.3);
+
+    @media (max-width: 767px) {
+      padding: 25px 15px 17px;
+      width: calc(100% + 30px);
+      margin-left: -15px;
+
+
+    }
+
+    &_empty {
+      padding-top: 0;
+      padding-bottom: 0;
+    }
+
+    &__item-wrapper {
+      display: flex;
+      flex-wrap: nowrap;
+      margin-bottom: 15px;
+      margin-left: 15px;
+
+      &:last-of-type {
+        margin-bottom: 17px;
+      }
+    }
+
+    &__input {
+      max-width: 240px;
+      width: 100%;
+      padding: 8px 12px;
+      border-top: 1px solid $color-border;
+      border-bottom: 1px solid $color-border;
+
+      font-weight: 600;
+      font-size: 14px;
+      line-height: 19px;
+      background-color: transparent;
+
+      @media (max-width: 767px) {
+        max-width: none;   
+      }
+
+      &::placeholder {
+        font-weight: 400;
+      }
+      
+      &_prop {
+        max-width: 120px;
+        border-right: 1px solid $color-border;
+
+        @media (max-width: 767px) {
+          max-width: none;
+          padding: 8px 8px;
+          font-size: 12px;
+        }
+      }
+      
+      &_value {
+        max-width: 120px;
+
+        @media (max-width: 767px) {
+          max-width: none;
+          padding: 8px 8px;
+          font-size: 12px;
+        }
+      }
+      
+      &:focus {
+        outline-color: $color-firm;
+      }
+
+    }
+    &__remove {
+      min-width: 27px;
+      height: 38px;
+      border: 1px solid $color-border;
+
+      font-size: 0;
+
+      background-color: $color-select-bg;
+      background-image: url(../img/cancel-grey.svg);
+      background-repeat: no-repeat;
+      background-position: center center;
+
+      &:focus {
+        outline: none;
+        border: 1px solid $color-firm;
+      }
+
+      &:active,
+      &:hover {
+        opacity: 0.75;
+      }
+    }
+    
+    &__add {
+        position: relative;
+        left: -15px;
+        display: block;
+        height: 35px;
+        margin: 0 auto;
+        padding: 0 10px 0 30px;       
+
+        font-weight: 600;
+        font-size: 14px;
+        line-height: 19px;
+
+        &::before {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            content: '';
+            width: 16px;
+            height: 16px;
+            object-fit: contain;
+
+            background-image: url(../img/add_circle_outline.svg);
+        }
+
+        &:focus {
+            outline: 2px dotted $color-firm;
+          }
+      
+          &:hover,
+          &:active {
+            opacity: 0.75;
+          }
+    }
+}
