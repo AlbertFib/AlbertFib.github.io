@@ -1,2 +1,2 @@
-# crm-example
-This is a coursework example of my code.
+Для работы необходимо запустить сервер из crm-backend
+node index
